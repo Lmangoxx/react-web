@@ -1,0 +1,28 @@
+{
+  "name": "webpack-dome",
+  "version": "1.0.0",
+  "description": "first webpack-dome",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack"
+  ],
+  "author": "Lmango",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^6.4.0",
+    "css-loader": "^0.24.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "jsx-loader": "^0.13.2",
+    "path": "^0.12.7",
+    "postcss-loader": "^0.11.1",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1"
+  },
+  "devDependencies": {
+    "node-sass": "^3.8.0",
+    "webpack": "^1.13.2"
+  }
+}
