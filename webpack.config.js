@@ -44,8 +44,8 @@ module.exports = {
 	},
 	//插件项
     plugins: [
-    	commonsPlugin,
-    	new ExtractTextPlugin('../css/[name].css', {allChunks: true}),  //css单独抽离出来打包(路径是相对于output里的path路径)
+    	commonsPlugin,  //js公共代码抽离
+    	new ExtractTextPlugin("../css/[name].css", {allChunks: true}),  //css单独抽离出来打包(路径是相对于output里的path路径)
         new webpack.optimize.UglifyJsPlugin({  //css,js文件压缩
             compress: {
                 warnings: false
