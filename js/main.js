@@ -1,2 +1,18 @@
+var React = require('react');
+var ReactDOM = require('react-dom');
 require("../css/style.scss");
-document.write("<div>这是一个webpack.config配置文件</div>");
+
+let HeaderCell = React.createClass({
+	render: function(){
+		return (
+			<div className="header-cell">
+				react文件
+			</div>
+		);
+	}
+});
+
+ReactDOM.render(
+	<HeaderCell />,
+	document.body
+);
