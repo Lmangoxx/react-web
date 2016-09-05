@@ -14,5 +14,5 @@ let HeaderCell = React.createClass({
 
 ReactDOM.render(
 	<HeaderCell />,
-	document.body
+	document.getElementById('content-cell')
 );
