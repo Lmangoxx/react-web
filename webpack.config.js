@@ -1,18 +1,22 @@
 var webpack           = require('webpack');
 var path              = require('path');
-var commonsPlugin     = new webpack.optimize.CommonsChunkPlugin('common.js');   //公共代码自动抽离出来
-var ExtractTextPlugin = require("extract-text-webpack-plugin");  //css文件单独抽离出来
+var ExtractTextPlugin = require('extract-text-webpack-plugin');  //css文件单独抽离出来
 var precss            = require('precss');  //css3自动补全前缀依赖的npm
 var autoprefixer      = require('autoprefixer');  //css3自动补全前缀依赖的npm
 
 module.exports = {
     //页面入口文件配置
     entry: {
-        main : './js/main.js'
+        main : [
+            'webpack/hot/dev-server',
+            'webpack-dev-server/client?http://localhost:3000',
+            './js/main.js'
+            ]
     },
     //入口文件输出配置
     output: {
-        path: './src/js',
+        path: path.resolve(__dirname, './src/js'),
+        publicPath: './',
         filename: '[name].min.js'
     },
     module: {
@@ -22,7 +26,7 @@ module.exports = {
             { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader','css-loader!postcss-loader?pack=cleaner') },
             //使用sass-loader前必须安装node-sass:SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ npm install node-sass --save-dev
             { test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader','css-loader!sass-loader?sourceMap!postcss-loader?pack=cleaner') }, 
-			{ test: /\.js$/, loader: "jsx-loader" }
+			{ test: /\.js$/, loader: "babel-loader?presets[]=es2015" }
         ]
     },
     postcss: function(){
@@ -44,10 +48,14 @@ module.exports = {
 	},
 	//插件项
     plugins: [
-    	commonsPlugin,  //js公共代码抽离
+        new webpack.HotModuleReplacementPlugin(),
+    	new webpack.optimize.CommonsChunkPlugin('common.js'),  //js公共代码抽离
     	new ExtractTextPlugin("../css/[name].min.css", {allChunks: true}),  //css单独抽离出来打包(路径是相对于output里的path路径)
         new webpack.optimize.UglifyJsPlugin({  //css,js文件压缩
-            compress: {
+            compressor: {
+                pure_getters: true,
+                unsafe: true,
+                unsafe_comps: true,
                 warnings: false
             }
         })
