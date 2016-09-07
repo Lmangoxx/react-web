@@ -1,12 +1,8 @@
 var React    = require('react');
 var ReactDOM = require('react-dom');
-// var webpack  = require('webpack');
-// var webpackDevServer = require('webpack-dev-server');
-// var config   = require("../webpack.config.js");
-// var compiler = webpack(config);
 require("../css/style.scss");
 
-document.body.innerHTML = "123";
+
 
 // config.entry.app.unshift("webpack-dev-server/client?http://localhost:8080/", "webpack/hot/dev-server");
 
@@ -18,7 +14,7 @@ var HeaderCell = React.createClass({
 	render: function(){
 		return (
 			<div className="header-cell">
-				react文件s0ssssasdfasd
+				这是热更新文件啊
 			</div>
 		);
 	}
