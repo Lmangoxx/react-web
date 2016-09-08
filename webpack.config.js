@@ -25,7 +25,7 @@ module.exports = {
     entry: {
         main : [
             'webpack/hot/dev-server',
-            'webpack-dev-server/client?http://localhost:3000',
+            'webpack-dev-server/client?http://localhost:8888',
             './js/main.js'
             ]
     },
@@ -45,7 +45,7 @@ module.exports = {
 			//{ test: /\.js$/, loader: "jsx" }
             //{ test: /\.js$/, loader: "babel-loader?presets[]=es2015", query: { presets: ['react']} }
             { test: /\.js$/, loader: "babel", query: { presets: ['react']} },
-            { test:/\.(png)|(jpg)|(gif)$/, loader: "url?limit=50000" }
+            { test:/\.(png)|(jpg)|(gif)$/, loader: "url?limit=10000" }
         ]
     },
     postcss: function(){
