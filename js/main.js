@@ -10,6 +10,7 @@ var MessageHtml = React.createClass({
 			<div>
 				<HeaderCell />
 				<NavCell />
+				ss
 			</div>
 		);
 	}
