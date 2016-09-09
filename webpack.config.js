@@ -54,7 +54,6 @@ module.exports = {
             cleaner:  [autoprefixer({ browsers: ['last 2 versions','Firefox < 20','ie 8','> 1%'] })]
         };
     },
-    //'!autoprefixer-loader?{"browsers": ["last 2 version", "> 10%", "> 5% in US", "ie 8", "ie 7"]}
     resolve: {
     	root: [  //添加默认搜索路径
 	      	path.join(__dirname, "src/")

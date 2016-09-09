@@ -1,8 +1,3 @@
-/* 公共样式 */
-@import "common.scss";
-/* 公共变量 */
-$mainColor:green;
-
 html, body {
 	height: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -87,36 +82,3 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0
 }
-.display-box {
-	display: flex
-}
-.box-flex {
-	flex: 1
-}
-.box-siz {
-	box-sizing: border-box
-}
-.over-ell {
-	display: block;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis
-}
-
-body{height:100%;color:#000;font-size:14px;}
-a{color:#626262;}
-.cf{zoom:1}.cf:after{content:'';display:block;clear:both;height:0;overflow:hidden;visibility:hidden}
-.fl{float:left;}
-.fr{float:right;}
-.domeBlack{position:fixed;top:0;left:0;right:0;bottom:0;z-index:2002;background:rgba(0,0,0,0.6);display:none}
-
-.m-header-cell { height: 45px; line-height: 45px; color: #fff; background-color: #0cc0a1; padding: 0 10px;}
-.m-header-cell a { color: #fff;}
-.m-h-icon .icon-aui-icon-left { font-size: 18px;}
-.m-h-title { text-align: center; font-size: 16px;}
-.m-h-city { border: 1px solid #fff; padding: 2px 7px; border-radius: 13px;}
-.icon-aui-icon-down { font-size: 12px; padding-left: 3px;}
-.icon-kefu-copy { font-size: 20px; padding-right: 3px;}
-
-/*popup样式*/
-.popup-msg{padding:10px 15px;-webkit-border-radius:5px;border-radius:5px;background-color:rgba(0,0,0,0.8);font-size:13px;color:#fff;position:fixed;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);}
