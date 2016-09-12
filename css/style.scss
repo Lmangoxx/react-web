@@ -3,6 +3,7 @@
 /* 公共变量 */
 $mainColor: #0cc0a1;
 @mixin align($align:center) { text-align: $align;}
+/* 页面样式 */
 .display-box {
 	display: flex
 }
@@ -74,6 +75,90 @@ a{color:#626262;}
 	transform-origin:0 0;
 	transform:scaleX(0.5)
 }
+
+.m-information-cell { 
+	@include align(center);
+	li { 
+		height: 55px; 
+		font-size: 12px;
+		a {
+			display: block; 
+			color: #333;
+			i {
+				display: block; height: 24px; line-height: 24px; padding: 6px 0 2px 0;
+			}
+		}
+		.icon-jiuzhengonglvesshixin { font-size: 22px; color: #ffad1e;}
+		.icon-icon1 { font-size: 22px; color: #2190e5;}
+		.icon-anquan { font-size: 25px; color: #ff6360;}
+		.icon-shipin { font-size: 25px; color: #9f6deb;}
+	}
+	li.choose {
+		a {
+			color: $mainColor;
+			i {
+				color: $mainColor;
+			}
+		}
+	}
+}
+.mir-cell-banner{
+	overflow:hidden;
+	position:relative;
+	ul {
+		overflow:hidden;display:-webkit-box;
+		li {
+			position:relative;padding:0;margin:0;
+		}
+	}
+	.ulCur{
+		position:absolute;width:100%;height:44px;color:#fff;background:rgba(0,0,0,.4);left:0;bottom:0;
+		.indexNum{
+			display:inline-block;width:44px;height:44px;background:#0cc0a1;position:relative;
+			&:before {content:'';position:absolute;top:37px;right:-15px;width:50px;height:1px;background-color:#fff;transform-origin:0 0;transform:scaleY(0.5) rotate(-55deg);}
+			i{position:absolute;left:10px;top:2px;font-size:1.3em;font-style:italic;}
+			em{position:absolute;bottom:2px;right:10px;font-size:0.8em;}
+		}
+		.indexTitle{line-height:44px;position:relative;padding:0 13px;font-size:0.9em;}
+		.indexTitle{line-height:44px;position:relative;padding:0 13px;font-size:0.9em;}
+		.lookNum{
+			line-height:44px;font-size:0.8em;padding:0 10px 0 0;
+			i{padding:0 5px 0 0;}
+		}
+	}
+}
+.download-app{
+	width:90%;
+	min-width:320px;
+	height:64px;
+	line-height:64px;
+	padding:0 5%;
+	background-color:#444;
+	background-size:320px;
+	position:fixed;
+	bottom:0;
+	left:0;
+	z-index:10;
+	@include align(center);
+	i {
+		color:#fff;padding: 0 10px;
+	}
+	img {
+		width:auto;height:64px;padding-left:20px;
+	}
+}
+.download-app~.content{margin-top:0px;}
+.download-app[class*="show"] + .content{margin-bottom:44px;}
+
+.mir-cell,.mir-cell-border,.mir-cell-border-e,.mir-cell-top,.mir-cell-left,.mir-cell-right,.mir-cell-bottom{position:relative}
+.mir-cell-top:before{content:" ";position:absolute;left:0;top:0;width:100%;height:1px;border-top:1px solid #e2e2e2;color:#D9D9D9;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scaleY(0.5);-ms-transform:scaleY(0.5);transform:scaleY(0.5)}
+.mir-cell-bottom:after{content:" ";position:absolute;left:0;bottom:-1px;width:100%;height:1px;border-bottom:1px solid #e2e2e2;color:#D9D9D9;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scaleY(0.5);-ms-transform:scaleY(0.5);transform:scaleY(0.5)}
+.mir-cell-left:before{content:" ";position:absolute;left:-1px;top:0;width:1px;height:100%;border-left:1px solid #e2e2e2;color:#D9D9D9;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scaleX(0.5);-ms-transform:scaleX(0.5);transform:scaleX(0.5)}
+.mir-cell-right:after{content:'';position:absolute;right:-1px;top:0;width:1px;height:100%;border-right:1px solid #e2e2e2;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scaleX(0.5);-ms-transform:scaleX(0.5);transform:scaleX(0.5)}
+.mir-cell-detail-foot-btn li .sign-up:before{content:'';width:200%;height:200%;position:absolute;top:0;left:0;-webkit-border-radius:8px;border-radius:8px;-webkit-box-shadow:0 0 2px rgba(0,0,0,0.5) inset;box-shadow:0 0 2px rgba(0,0,0,0.5) inset;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scale(0.5);-ms-transform:scale(0.5);transform:scale(0.5)}
+.mir-cell-border:after,.mir-cell-border-e:after,.mir-cell-border-orange:after{content:'';-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;width:200%;height:200%;position:absolute;top:0px;left:0px;-webkit-border-radius:10px;border-radius:10px;border:1px solid #ea473c;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scale(0.5);-ms-transform:scale(0.5);transform:scale(0.5)}
+.mir-cell-border-e:after{border:1px solid #e2e2e2}
+.mir-cell-border-orange:after{border:1px solid #ff6000}
 
 /*popup样式*/
 .popup-msg{

@@ -6,21 +6,7 @@ var autoprefixer      = require('autoprefixer');  //css3自动补全前缀依赖
 var env               = process.env.WEBPACK_ENV;
 var outputFileName;
 
-// if(env === "webpack"){
-//     new webpack.optimize.UglifyJsPlugin({  //css,js文件压缩
-//         compressor: {
-//             pure_getters: true,
-//             unsafe: true,
-//             unsafe_comps: true,
-//             warnings: false
-//         }
-//     });
-//     outputFileName = '[name].min.js';
-// }else {
-//     outputFileName = '[name].js';
-// }
-
-module.exports = {
+var config  = {
     //页面入口文件配置
     entry: {
         main : [
@@ -56,11 +42,14 @@ module.exports = {
     },
     resolve: {
     	root: [  //添加默认搜索路径
-	      	path.join(__dirname, "src/")
+	      	path.join(__dirname, "js")
 	    ],
     	extensions: ['', '.js', '.json', '.scss'],
 	    alias: {
-	      	//jquery: "lib/bower_components/jquery-1.11.1.min.js",
+	      	jquery: "lib/jquery-1.7.2.min.js",
+            slider: "lib/slider-1.0.js",
+            swiper: "lib/swiper.3.3.1.min.js",
+            mainFun: "lib/mainFun.js"
 	      	//let_it_snow: "js/lib/jquery.let_it_snow.js"
 	    }
 	},
@@ -68,14 +57,21 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(), //热更新
     	new webpack.optimize.CommonsChunkPlugin('common.js'),  //js公共代码抽离
-    	new ExtractTextPlugin("../css/[name].min.css", {allChunks: true}),  //css单独抽离出来打包(路径是相对于output里的path路径)
-        new webpack.optimize.UglifyJsPlugin({  //css,js文件压缩
-            compressor: {
-                pure_getters: true,
-                unsafe: true,
-                unsafe_comps: true,
-                warnings: false
-            }
-        })
+    	new ExtractTextPlugin("../css/[name].min.css", {allChunks: true})  //css单独抽离出来打包(路径是相对于output里的path路径)
     ]
 };
+
+
+if(env === "production"){  // 生产环境下压缩
+    var uglify = new webpack.optimize.UglifyJsPlugin({  //css,js文件压缩
+        compressor: {
+            pure_getters: true,
+            unsafe: true,
+            unsafe_comps: true,
+            warnings: false
+        }
+    });
+    config.plugins.push(uglify);
+}
+
+module.exports = config;
