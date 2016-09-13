@@ -25,7 +25,6 @@ var BannerCell = React.createClass({
 	                }     
 	        }
 	    };
-		var mainFun  = new MainFun();  // 调用公共方法
 		mainFun.getJSON(bannerParam);   //执行banner加载
 	},
 	render: function(){

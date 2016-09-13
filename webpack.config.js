@@ -31,7 +31,7 @@ var config  = {
 			//{ test: /\.js$/, loader: "jsx" }
             //{ test: /\.js$/, loader: "babel-loader?presets[]=es2015", query: { presets: ['react']} }
             { test: /\.js$/, loader: "babel", query: { presets: ['react']} },
-            { test:/\.(png)|(jpg)|(gif)$/, loader: "url?limit=10000" }
+            { test: /\.(png|jpg|gif|svg)$/, loader: "file!url?limit=10000" }
         ]
     },
     postcss: function(){
