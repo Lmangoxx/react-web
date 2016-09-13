@@ -3,9 +3,9 @@ var React          = require('react'),
 	HeaderCell     = require('./include/header'),   // header头部
 	NavCell        = require('./include/nav'),      // nav部分
 	MessageNavCell = require('./include/message-nav'),  // messageNav部分
-	BannerCell     = require('./include/banner'),
-	DownloadApp = require('./include/download-app'),  // downloadApp下载部分
-	MainFun = require('mainFun');  // 公共方法
+	BannerCell     = require('./include/banner'),  // banner部分
+	DownloadApp    = require('./include/download-app'),  // downloadApp下载部分
+	MainFun        = require('mainFun');  // 公共方法
 	require("../css/style.scss");  // 样式引入
 
 var MessageHtml = React.createClass({
