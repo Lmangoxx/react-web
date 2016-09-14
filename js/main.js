@@ -9,9 +9,6 @@ var React           = require('react'),
 	MainFun         = require('mainFun');  // 公共方法
 	require("../css/style.scss");  // 样式引入
 
-	var pick = require('../images/logo.jpg');
-	document.write('<img src="src/js/'+pick+'" alt="">');
-
 var MessageHtml = React.createClass({
 	componentDidMount: function(){  // 这里需要注意，对dom进行操作，以及公共绑定的事件，要在componentDidMount里调用，因为这个时候dom才被真是插入
 		//var mainFun  = new MainFun();  // 调用公共方法
@@ -19,12 +16,12 @@ var MessageHtml = React.createClass({
 	render: function(){
 		return (
 			<div>
+				<DownloadApp href="" />
 				<HeaderCell />
 				<NavCell />
 				<MessageNavCell />
 				<BannerCell />
 				<MessageListCell />
-				<DownloadApp href="" />
 			</div>
 		);
 	}

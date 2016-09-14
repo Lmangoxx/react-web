@@ -17,8 +17,8 @@ var config  = {
     },
     //入口文件输出配置
     output: {
-        path: path.resolve(__dirname, './src/js'),
-        publicPath: './',
+        path: path.resolve(__dirname, './src/'),
+        publicPath: '/src/images/',
         filename: '[name].min.js'
     },
     module: {
@@ -30,8 +30,8 @@ var config  = {
             { test: /\.scss$/, loader: ExtractTextPlugin.extract('style','css!sass?sourceMap!postcss?pack=cleaner') }, 
 			//{ test: /\.js$/, loader: "jsx" }
             //{ test: /\.js$/, loader: "babel-loader?presets[]=es2015", query: { presets: ['react']} }
-            { test: /\.js$/, loader: "babel", query: { presets: ['react']} },
-            { test: /\.(png|jpg|gif|svg)$/, loader: "file!url?limit=10000" }
+            { test: /\.js$/, loader: "babel", query: { presets: ['es2015','react']} },
+            { test: /\.(png|jpg|gif|svg)$/, loader: "url?limit=8192&name=images/[name].[ext]" }
         ]
     },
     postcss: function(){
@@ -57,7 +57,7 @@ var config  = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(), //热更新
     	new webpack.optimize.CommonsChunkPlugin('common.js'),  //js公共代码抽离
-    	new ExtractTextPlugin("../css/[name].min.css", {allChunks: true})  //css单独抽离出来打包(路径是相对于output里的path路径)
+    	new ExtractTextPlugin("./css/[name].min.css", {allChunks: true})  //css单独抽离出来打包(路径是相对于output里的path路径)
     ]
 };
 
