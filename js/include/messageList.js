@@ -13,31 +13,34 @@ var MessageListCell = React.createClass({
             promise : $.getJSON('http://www.ggxueche.com/main/article/page?recommend='+recommend+'&currentPage='+pageNumber+''),
             loadingShow : false,  //加载状态，默认是未加载
             error : null,
-            Newsdata : null
+            Newsdata : null,
+            num : 0
         }
     },
     componentDidMount : function(){
         this.state.promise.then(
-            value => this.setState({loadingShow: true, Newsdata: value}),
+            value => this.setState({loadingShow: true, Newsdata: this.state.Newsdata == null ? value : Object.assign(this.state.Newsdata,value)}),
             error => this.setState({loadingShow: true, error: error})
         );
         window.addEventListener('scroll', this.handleScroll);
     },
     componentWillUnmount: function() {
         window.removeEventListener('scroll', this.handleScroll);
-        this.setState({loadingShow:false});  //加载状态改为true，一次加载完成前防止频繁加载
     },
     handleScroll: function(){
     　　var scrollTop = $(window).scrollTop();
     　　var scrollHeight = $(document).height();
     　　var windowHeight = $(window).height();
     　　if((scrollTop + windowHeight + 100) >= scrollHeight){
-            console.log(this.state.loadingShow)
             if(!this.state.loadingShow) { 
         　　　　this.setState({
                     loadingShow : true,
                     promise : $.getJSON('http://www.ggxueche.com/main/article/page?recommend='+recommend+'&currentPage='+(pageNumber+=1)+'')
                 });
+        		this.state.promise.then(
+		            value => this.setState({loadingShow: true, Newsdata: this.state.Newsdata == null ? value : Object.assign(this.state.Newsdata,value)}),
+		            error => this.setState({loadingShow: true, error: error})
+		        );
             }
     　　}
     },
