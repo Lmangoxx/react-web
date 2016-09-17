@@ -13,8 +13,7 @@ var MessageListCell = React.createClass({
             promise : $.getJSON('http://www.ggxueche.com/main/article/page?recommend='+recommend+'&currentPage='+pageNumber+''),
             loadingShow : false,  //加载状态，默认是未加载
             error : null,
-            Newsdata : null,
-            num : 0
+            Newsdata : null
         }
     },
     componentDidMount : function(){
