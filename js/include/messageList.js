@@ -73,7 +73,7 @@ const MessageItemCell = React.createClass({
             var url = "${contextPath}/main/article/pages/detail/" + this.props.data.id;
             var img = this.props.data.picture ? this.props.data.picture.split(",")[0] : "./images/gg-default.jpg";
             return (
-                <li key={this.props.data.id} className="mir-cell-bottom" id="mir-cell-share">
+                <li className="mir-cell-bottom" id="mir-cell-share">
                     <a className="display-box" href={url}>
                         <div className="info box-flex">
                             <div className="title" id="title">{this.props.data.title}</div>
