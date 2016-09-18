@@ -10,8 +10,6 @@ var config  = {
     //页面入口文件配置
     entry: {
         main : [
-            'webpack/hot/dev-server',
-            'webpack-dev-server/client?http://localhost:8888',
             './js/main.js'
             ]
     },
@@ -55,7 +53,6 @@ var config  = {
 	},
 	//插件项
     plugins: [
-        new webpack.HotModuleReplacementPlugin(), //热更新
     	new webpack.optimize.CommonsChunkPlugin('common.js'),  //js公共代码抽离
     	new ExtractTextPlugin("./css/[name].min.css", {allChunks: true})  //css单独抽离出来打包(路径是相对于output里的path路径)
     ]
@@ -64,14 +61,20 @@ var config  = {
 
 if(env === "production"){  // 生产环境下压缩
     var uglify = new webpack.optimize.UglifyJsPlugin({  //css,js文件压缩
-        compressor: {
-            pure_getters: true,
-            unsafe: true,
-            unsafe_comps: true,
-            warnings: false
-        }
-    });
+            compressor: {
+                pure_getters: true,
+                unsafe: true,
+                unsafe_comps: true,
+                warnings: false
+            }
+        });
     config.plugins.push(uglify);
+}else{
+    config.plugins.push(new webpack.HotModuleReplacementPlugin());
+    config.entry.main.push(
+        'webpack/hot/dev-server',
+        'webpack-dev-server/client?http://localhost:8888'
+    );
 }
 
 module.exports = config;

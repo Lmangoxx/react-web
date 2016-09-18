@@ -143,6 +143,9 @@ a {
   background: rgba(0, 0, 0, 0.6);
   display: none; }
 
+.ededf2 {
+  background-color: #ededf2; }
+
 .m-header-cell {
   height: 45px;
   line-height: 45px;
@@ -176,7 +179,8 @@ a {
 .m-nav-cell {
   height: 42px;
   line-height: 42px;
-  text-align: center; }
+  text-align: center;
+  background-color: #fff; }
   .m-nav-cell a {
     display: inline-block;
     height: 42px;
@@ -203,7 +207,8 @@ a {
   transform: scaleX(0.5); }
 
 .m-information-cell {
-  text-align: center; }
+  text-align: center;
+  background-color: #fff; }
   .m-information-cell li {
     height: 55px;
     font-size: 12px; }
@@ -379,6 +384,13 @@ a {
 
 .download-app[class*="show"] + .content {
   margin-bottom: 44px; }
+
+.copyright-text {
+  padding: 15px 0;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  text-shadow: 1px 1px #fff; }
 
 .loading-small {
   display: inline-block;

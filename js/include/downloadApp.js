@@ -1,8 +1,8 @@
-var React    = require('react'),
-	ReactDOM = require('react-dom'),
-	MainFun  = require('mainFun');
+const React    = require('react'),
+	  ReactDOM = require('react-dom'),
+	  MainFun  = require('mainFun');
 
-var DownloadApp = React.createClass({
+const DownloadApp = React.createClass({
 	getInitialState: function(){
 		if(!navigator.userAgent.match("GGXUECHE")){
 			return {
