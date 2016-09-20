@@ -221,10 +221,10 @@ a{color:#626262;}
 	transform-origin:0 0;
 	transform:scaleY(0.5)
 }
-.mir-cell-left:before{content:" ";position:absolute;left:-1px;top:0;width:1px;height:100%;border-left:1px solid #e2e2e2;color:#D9D9D9;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scaleX(0.5);-ms-transform:scaleX(0.5);transform:scaleX(0.5)}
-.mir-cell-right:after{content:'';position:absolute;right:-1px;top:0;width:1px;height:100%;border-right:1px solid #e2e2e2;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scaleX(0.5);-ms-transform:scaleX(0.5);transform:scaleX(0.5)}
-.mir-cell-detail-foot-btn li .sign-up:before{content:'';width:200%;height:200%;position:absolute;top:0;left:0;-webkit-border-radius:8px;border-radius:8px;-webkit-box-shadow:0 0 2px rgba(0,0,0,0.5) inset;box-shadow:0 0 2px rgba(0,0,0,0.5) inset;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scale(0.5);-ms-transform:scale(0.5);transform:scale(0.5)}
-.mir-cell-border:after,.mir-cell-border-e:after,.mir-cell-border-orange:after{content:'';-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;width:200%;height:200%;position:absolute;top:0px;left:0px;-webkit-border-radius:10px;border-radius:10px;border:1px solid #ea473c;-webkit-transform-origin:0 0;-ms-transform-origin:0 0;transform-origin:0 0;-webkit-transform:scale(0.5);-ms-transform:scale(0.5);transform:scale(0.5)}
+.mir-cell-left:before{content:'';position:absolute;left:-1px;top:0;width:1px;height:100%;border-left:1px solid #e2e2e2;color:#D9D9D9;transform-origin:0 0;transform:scaleX(0.5)}
+.mir-cell-right:after{content:'';position:absolute;right:-1px;top:0;width:1px;height:100%;border-right:1px solid #e2e2e2;transform-origin:0 0;transform:scaleX(0.5)}
+.mir-cell-detail-foot-btn li .sign-up:before{content:'';width:200%;height:200%;position:absolute;top:0;left:0;border-radius:8px;box-shadow:0 0 2px rgba(0,0,0,0.5) inset;transform-origin:0 0;transform:scale(0.5)}
+.mir-cell-border:after,.mir-cell-border-e:after,.mir-cell-border-orange:after{content:'';box-sizing:border-box;width:200%;height:200%;position:absolute;top:0px;left:0px;border-radius:10px;border:1px solid #ea473c;transform-origin:0 0;transform:scale(0.5)}
 .mir-cell-border-e:after{border:1px solid #e2e2e2}
 .mir-cell-border-orange:after{border:1px solid #ff6000}
 
